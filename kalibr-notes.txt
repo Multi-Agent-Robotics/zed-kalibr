@@ -1,0 +1,12 @@
+rosrun kalibr kalibr_calibrate_cameras \
+	--bag /data/kalibr-data-1678980198.bag \
+	--target /data/april_10x6_53.2x32.4cm.yaml \ 
+	--models pinhole-radtan pinhole-radtan \
+	--topics /zedm/zed_node/right/image_rect_color /zedm/zed_node/left/image_rect_color
+
+rosrun kalibr kalibr_calibrate_imu_camera \
+	 --target /data/april_10x6_53.2x32.4cm.yaml \
+	 --bag /data/kalibr-data-1678980198.bag \
+	 --imu /data/imu.yaml \
+	 --cam /
+	 
