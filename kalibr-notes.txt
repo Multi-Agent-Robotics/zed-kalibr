@@ -1,12 +1,26 @@
-rosrun kalibr kalibr_calibrate_cameras \
-	--bag /data/kalibr-data-1678980198.bag \
-	--target /data/april_10x6_53.2x32.4cm.yaml \ 
-	--models pinhole-radtan pinhole-radtan \
-	--topics /zedm/zed_node/right/image_rect_color /zedm/zed_node/left/image_rect_color
+rosrun kalibr kalibr_calibrate_cameras --bag /data/bags/kalibr-data-1678980198.bag --target /data/april_10x6_53.2x32.4cm.yaml --models pinhole-radtan pinhole-radtan --topics /zedm/zed_node/right/image_rect_color /zedm/zed_node/left/image_rect_color
 
-rosrun kalibr kalibr_calibrate_imu_camera \
-	 --target /data/april_10x6_53.2x32.4cm.yaml \
-	 --bag /data/kalibr-data-1678980198.bag \
-	 --imu /data/imu.yaml \
-	 --cam /
+rosrun kalibr kalibr_calibrate_imu_camera --target /data/april_10x6_53.2x32.4cm.yaml --bag /data/bags/kalibr-data-1678980198.bag --imu /data/imu.yaml --cam /data/bags/kalibr-data-1678980198-camchain.yaml --timeoffset-padding 0.1
 	 
+
+
+.
+├── bags
+│  ├── kalibr-data-1678980198
+│  │  ├── kalibr-data-1678980198.bag_0.db3
+│  │  └── metadata.yaml
+│  ├── kalibr-data-1678980198-camchain.yaml
+│  ├── kalibr-data-1678980198-report-cam.pdf
+│  ├── kalibr-data-1678980198-results-cam.txt
+│  └── kalibr-data-1678980198.bag
+├── april_6x6_80x80cm.yaml
+├── april_6x6_80x80cm_A0.pdf
+├── april_10x6_53.2x32.4cm.yaml
+├── imu.yaml
+├── justfile
+├── kalibr-notes.txt
+├── LICENSE
+├── poetry.lock
+├── pyproject.toml
+└── README.md
+

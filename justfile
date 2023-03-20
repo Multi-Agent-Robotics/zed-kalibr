@@ -16,7 +16,7 @@ alias r := record
 
 # taken from https://github.com/ethz-asl/kalibr.git
 enter-container:
-	xhost +local:root
+	# xhost +local:root
 	docker run -it --rm \
 		--env="DISPLAY" \
 		--env="QT_X11_NO_MITSHM=1" \
