@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "zed-kalibr"
+version = "0.1.0"
+description = "Calibration of ZED Mini camera with `kalibr`"
+authors = ["kpbs5 <kristoffer.pbs@tuta.io>"]
+license = "MIT"
+readme = "README.md"
+# packages = [{include = "zed_kalibr"}]
+
+[tool.poetry.dependencies]
+python = "^3.8.10"
+rosbags = "^0.9.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

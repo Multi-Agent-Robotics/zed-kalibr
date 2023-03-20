@@ -1,10 +1,30 @@
 now := `date +%s`
 bag := "kalibr-data-" + now + ".bag"
+cwd := `pwd`
 
 default:
 	@just --list
 
 alias r := record
+
+# build-container:
+# 	# test -d ./kalibr
+# 	# if ! docker image inspect kalibr > /dev/null 2>&1; then; 
+# 		# docker build -t kalibr ./kalibr; \
+# 	# fi
+
+
+# taken from https://github.com/ethz-asl/kalibr.git
+enter-container:
+	xhost +local:root
+	docker run -it --rm \
+		--env="DISPLAY" \
+		--env="QT_X11_NO_MITSHM=1" \
+		--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+		--volume={{cwd}}:/data \
+		kalibr
+
+
 
 # start the ZED SDK wrapper
 [unix]
